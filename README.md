@@ -20,7 +20,7 @@ You can sign up for a [Free Azure Account](https://azure.microsoft.com/en-au/fre
 
 ## Developing Kotlin Azure Functions
 
-The [Creating Kotlin based Azure Function with IntelliJ ](https://dev.to/azure/creating-kotlin-based-azure-function-with-intellij-486b) guide has all the information on set up requirements, JDKs, IntelliJ, Azue CLI etc and has a step by step guide to creating your first Kotlin Azure Functions with IntelliJ.
+The [Creating Kotlin based Azure Function with IntelliJ ](https://dev.to/azure/creating-kotlin-based-azure-function-with-intellij-486b) guide has all the information on insrallation requirements, JDKs, IntelliJ, Azure CLI etc and has a step by step guide to creating your first Kotlin Azure Functions with IntelliJ.
 
 ## Resources for Java and Kotlin Azure Functions
 
@@ -177,7 +177,7 @@ private fun validateTelemetry(telemetry: EnvironmentEntity): Boolean {
 
 ## Azure SignalR Integration
 
-There is no Service-Side Azure SignalR SDK. To send telemetry from the Event Hub Trigger Azure Function to the Dashboard Web Client you need to call a HTTP Azure Function that is bound to the SignalR service. This SignalR Azure Function then sends the telemetry via SignalR as if the data was coming from a client-side app.
+There is no Service-Side Azure SignalR SDK. To send telemetry from the Event Hub Trigger Azure Function to the Dashboard Web Client you need to call an HTTP Azure Function that is bound to the SignalR service. This SignalR Azure Function then sends the telemetry via SignalR as if the data was coming from a client-side app.
 
 The flow for Azure SignalR integration is as follows:
 
