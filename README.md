@@ -1,6 +1,6 @@
 # Building a Serverless IoT Solution with Kotlin Azure Functions and SignalR
 
-Follow me on [Twitter](https://twitter.com/dglover), [Project Source Code](https://github.com/gloveboxes/Go-Serverless-with-Python-Azure-Functions-and-SignalR), [Powerpoint Slides](https://github.com/gloveboxes/Go-Serverless-with-Python-Azure-Functions-and-SignalR/blob/master/docs/Python%20Serverless%20with%20Azure%20Functions.pptx), [PDF Slides](https://github.com/gloveboxes/Go-Serverless-with-Python-Azure-Functions-and-SignalR/blob/master/docs/Python%20Serverless%20with%20Azure%20Functions.pdf)
+Follow me on [Twitter](https://twitter.com/dglover), [Project Source Code](https://github.com/gloveboxes/Going-Serverless-with-Kotlin-Azure-Functions-SignalR), [Powerpoint Slides](https://github.com/gloveboxes/Go-Serverless-with-Python-Azure-Functions-and-SignalR/blob/master/docs/Python%20Serverless%20with%20Azure%20Functions.pptx), [PDF Slides](https://github.com/gloveboxes/Go-Serverless-with-Python-Azure-Functions-and-SignalR/blob/master/docs/Python%20Serverless%20with%20Azure%20Functions.pdf)
 
 ## Solution Overview
 
@@ -22,13 +22,14 @@ You can sign up for a [Free Azure Account](https://azure.microsoft.com/en-au/fre
 
 ## Where to Start
 
-Review the [Azure Functions Python Worker Guide](https://github.com/Azure/azure-functions-python-worker). There is information on the following topics:
-
-- [Create your first Python function](https://docs.microsoft.com/en-us/azure/azure-functions/functions-create-first-function-python?WT.mc_id=github-blog-dglover)
-- [Developer guide](https://docs.microsoft.com/en-us/azure/azure-functions/functions-reference-python?WT.mc_id=github-blog-dglover)
-- [Binding API reference](https://docs.microsoft.com/en-us/python/api/azure-functions/azure.functions?view=azure-python&WT.mc_id=github-blog-dglover)
-- [Develop using VS Code](https://docs.microsoft.com/en-us/azure/azure-functions/functions-create-first-function-vs-code?WT.mc_id=github-blog-dglover)
-- [Create a Python Function on Linux using a custom docker image](https://docs.microsoft.com/en-us/azure/azure-functions/functions-create-function-linux-custom-image?WT.mc_id=github-blog-dglover)
+- [Creating Kotlin based Azure Function with IntelliJ ](https://dev.to/azure/creating-kotlin-based-azure-function-with-intellij-486b)
+- [Create your first function with Java and Maven](https://docs.microsoft.com/en-us/azure/azure-functions/functions-create-first-java-maven)
+- [Create your first Azure function with Java and IntelliJ](https://docs.microsoft.com/en-us/azure/azure-functions/functions-create-maven-intellij)
+- [Announcing the general availability of Java support in Azure Functions](https://azure.microsoft.com/en-au/blog/announcing-the-general-availability-of-java-support-in-azure-functions/)
+[Azure Functions triggers and bindings concepts](https://docs.microsoft.com/en-us/azure/azure-functions/functions-triggers-bindings)
+- [Maven Plugin for Azure Functions](https://github.com/Microsoft/azure-maven-plugins/tree/develop/azure-functions-maven-plugin)
+- [Azure Functions Java developer guide](https://docs.microsoft.com/en-au/azure/azure-functions/functions-reference-java)
+- [ Java API for Azure Functions](https://docs.microsoft.com/en-us/java/api/com.microsoft.azure.functions.annotation?view=azure-java-stable)
 
 ## Solution Components (included in this GitHub repo)
 
@@ -48,9 +49,7 @@ I wanted to maintain a count in the Device State table of the number of times a 
 
 If there are multiple functions instances updating and there is a clash, I have implemented Exponential Backoff and added a random factor to allow for retry.
 
-    Pseudo code
-
-    random(occBase, min(occCap, occBase * 2 ^ attempt))
+    Pseudo code: random(occBase, min(occCap, occBase * 2 ^ attempt))
 
 ```kotlin
 private  fun calcExponentialBackoff(attempt: Int) : Long{
