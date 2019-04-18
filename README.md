@@ -4,7 +4,7 @@ Follow me on [Twitter](https://twitter.com/dglover), [Project Source Code](https
 
 ## Solution Overview
 
-![solution overview](https://raw.githubusercontent.com/gloveboxes/Going-Serverless-with-Kotlin-Azure-Functions-SignalR/master/docs//resources/solution-architecture.png)
+![solution overview](https://raw.githubusercontent.com/gloveboxes/Going-Serverless-with-Kotlin-Azure-Functions-SignalR/master/docs/resources/solution-architecture.png)
 
 This solution diagram overviews a typical IoT solution. [Azure IoT Hub](https://docs.microsoft.com/en-us/azure/iot-hub?WT.mc_id=github-blog-dglover) is responsible for internet scale, secure, bi-directional communication with devices and backend services.
 
@@ -20,13 +20,14 @@ You can sign up for a [Free Azure Account](https://azure.microsoft.com/en-au/fre
 
 ## Developing Kotlin Azure Functions
 
-## Where to Start
+The [Creating Kotlin based Azure Function with IntelliJ ](https://dev.to/azure/creating-kotlin-based-azure-function-with-intellij-486b) guide has all the information on set up requirements, JDKs, IntelliJ, Azue CLI etc and has a step by step guide to creating your first Kotlin Azure Functions with IntelliJ.
 
-- [Creating Kotlin based Azure Function with IntelliJ ](https://dev.to/azure/creating-kotlin-based-azure-function-with-intellij-486b)
+## Resources for Java and Kotlin Azure Functions
+
 - [Create your first function with Java and Maven](https://docs.microsoft.com/en-us/azure/azure-functions/functions-create-first-java-maven?WT.mc_id=github-blog-dglover)
 - [Create your first Azure function with Java and IntelliJ](https://docs.microsoft.com/en-us/azure/azure-functions/functions-create-maven-intellij?WT.mc_id=github-blog-dglover)
 - [Announcing the general availability of Java support in Azure Functions](https://azure.microsoft.com/en-au/blog/announcing-the-general-availability-of-java-support-in-azure-functions?WT.mc_id=github-blog-dglover)
-[Azure Functions triggers and bindings concepts](https://docs.microsoft.com/en-us/azure/azure-functions/functions-triggers-bindings?WT.mc_id=github-blog-dglover)
+- [Azure Functions triggers and bindings concepts](https://docs.microsoft.com/en-us/azure/azure-functions/functions-triggers-bindings?WT.mc_id=github-blog-dglover)
 - [Maven Plugin for Azure Functions](https://github.com/Microsoft/azure-maven-plugins/tree/develop/azure-functions-maven-plugin)
 - [Azure Functions Java developer guide](https://docs.microsoft.com/en-au/azure/azure-functions/functions-reference-java?WT.mc_id=github-blog-dglover)
 - [ Java API for Azure Functions](https://docs.microsoft.com/en-us/java/api/com.microsoft.azure.functions.annotation?view=azure-java-stable?WT.mc_id=github-blog-dglover)
@@ -287,7 +288,7 @@ Start **IntelliJ** and open the project in the '**iot-serverless-kotlin-azure-fu
 
 Open the '**Maven**' tab, run '**clean**', the '**package**', then '**azure-functions:deploy**'
 
-![](./docs/resources/azure-function-deploy.jpg)
+![](https://raw.githubusercontent.com/gloveboxes/Going-Serverless-with-Kotlin-Azure-Functions-SignalR/master/docs/resources/azure-function-deploy.jpg)
 
 ### Step 10: Enable Static Websites for Azure Storage
 
