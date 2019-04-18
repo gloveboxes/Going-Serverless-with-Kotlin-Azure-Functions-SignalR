@@ -48,6 +48,10 @@ I wanted to maintain a count in the Device State table of the number of times a 
 
 If there are multiple functions instances updating and there is a clash, I have implemented Exponential Backoff and added a random factor to allow for retry.
 
+    Pseudo code
+
+    random(occBase, min(occCap, occBase * 2 ^ attempt))
+
 ```kotlin
 private  fun calcExponentialBackoff(attempt: Int) : Long{
     val base = occBase * Math.pow(2.0, attempt.toDouble())
