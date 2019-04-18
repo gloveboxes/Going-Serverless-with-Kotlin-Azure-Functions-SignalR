@@ -228,56 +228,35 @@ az storage account create -n enviromonstorage -g enviromon-kotlin -l westus --sk
 ### Step 5: Clone the project
 
 ```bash
-git clone https://github.com/gloveboxes/Go-Serverless-with-Python-Azure-Functions-and-SignalR.git
+git clone https://github.com/gloveboxes/Going-Serverless-with-Kotlin-Azure-Functions-SignalR.git
 ```
 
 ### Step 6: Deploy the SignalR .NET Core Azure Function
 
 ```bash
-cd  Go-Serverless-with-kotlin-Azure-Functions-and-SignalR
+cd  Going-Serverless-with-Kotlin-Azure-Functions-SignalR
 
-cd dotnet-signalr-functions
+cd iot-serverless-kotlin-azure-functions-signalr
 
 cp local.settings.sample.json local.settings.json
 
-code .
-```
-
-### Step 7: Update the local.settings.json
-
-```json
-{
-    "IsEncrypted": false,
-    "Values": {
-        "AzureWebJobsStorage": "<The Storage Connection String for enviromonstorage>",
-        "FUNCTIONS_WORKER_RUNTIME": "dotnet",
-        "StorageConnectionString":"<The Storage Connection String for enviromonstorage>",
-        "AzureSignalRConnectionString": "<The SignalR Coonection String from Step 3>"
-    },
-    "Host": {
-        "LocalHttpPort": 7071,
-        "CORS": "http://127.0.0.1:5500,http://localhost:5500,https://azure-samples.github.io",
-        "CORSCredentials": true
-    }
-}
 ```
 
 ### Step 9: Open the Kotlin Azure Functions Project with IntelliJ
-
-Change to the directory where you cloned to the project to, the change to the iothub-python-functions directory, then start Visual Studio Code.
 
 From Terminal on Linux and macOS, or Powershell on Windows.
 
 ```bash
 
-cd  Go-Serverless-with-Python-Azure-Functions-and-SignalR
+cd  Going-Serverless-with-Kotlin-Azure-Functions-SignalR
 
-cd iothub-python-functions
+cd iot-serverless-kotlin-azure-functions-signalr
 
 cp local.settings.sample.json local.settings.json
 
-code .
 ```
+
+Start **IntelliJ** and open the project in the '**iot-serverless-kotlin-azure-functions-signalr**' folder.
 
 ### Step 10: Update the local.settings.json
 
@@ -303,12 +282,9 @@ code .
 
 ### Step 11: Deploy the Kotlin Azure Function
 
-1. Open a terminal window in Visual Studio. From the main menu, select View -> Terminal
-2. Deploy the Azure Function
+Open the '**Maven**' tab, run '**clean**', the '**package**', then '**azure-functions:deploy**'
 
-```bash
-func azure functionapp publish enviromon-python --publish-local-settings --build-native-deps  
-```
+![](./docs/resources/azure-function-deploy.jpg)
 
 ### Step 12: Enable Static Websites for Azure Storage
 
@@ -325,7 +301,7 @@ Copy the contents of the dashboard project to the static website.
 [az functionapp cors add](https://docs.microsoft.com/en-us/cli/azure/functionapp/cors?view=azure-cli-latest#az-functionapp-cors-add&WT.mc_id=github-blog-dglover)
 
 ```bash
-az functionapp cors add -g enviromon-python -n <Your SignalR Function Name> --allowed-origins <https://my-static-website-url>
+az functionapp cors add -g enviromon-kotlin -n <Your SignalR Function Name> --allowed-origins <https://my-static-website-url>
 ```
 
 ### Step 14: Start the Dashboard
