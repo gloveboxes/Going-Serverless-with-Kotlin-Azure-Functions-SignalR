@@ -1,6 +1,6 @@
 # Building a Serverless IoT Solution with Kotlin Azure Functions and SignalR
 
-Follow me on [Twitter](https://twitter.com/dglover), [Project Source Code](https://github.com/gloveboxes/Going-Serverless-with-Kotlin-Azure-Functions-SignalR), [Powerpoint Slides](https://github.com/gloveboxes/Go-Serverless-with-Python-Azure-Functions-and-SignalR/blob/master/docs/Python%20Serverless%20with%20Azure%20Functions.pptx), [PDF Slides](https://github.com/gloveboxes/Go-Serverless-with-Python-Azure-Functions-and-SignalR/blob/master/docs/Python%20Serverless%20with%20Azure%20Functions.pdf)
+Follow me on [Twitter](https://twitter.com/dglover), [Project Source Code](https://github.com/gloveboxes/Going-Serverless-with-Kotlin-Azure-Functions-SignalR), [Powerpoint Slides](https://github.com/gloveboxes/Going-Serverless-with-Kotlin-Azure-Functions-SignalR/blob/master/docs/Kotlin%20Serverless%20with%20Azure%20Functions%20Final%20-%20March%202019.pptx), [PDF Slides](https://github.com/gloveboxes/Going-Serverless-with-Kotlin-Azure-Functions-SignalR/blob/master/docs/Kotlin%20Serverless%20with%20Azure%20Functions%20Final%20-%20March%202019.pdf)
 
 ## Solution Overview
 
