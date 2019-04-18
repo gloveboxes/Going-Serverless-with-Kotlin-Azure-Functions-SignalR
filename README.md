@@ -23,13 +23,13 @@ You can sign up for a [Free Azure Account](https://azure.microsoft.com/en-au/fre
 ## Where to Start
 
 - [Creating Kotlin based Azure Function with IntelliJ ](https://dev.to/azure/creating-kotlin-based-azure-function-with-intellij-486b)
-- [Create your first function with Java and Maven](https://docs.microsoft.com/en-us/azure/azure-functions/functions-create-first-java-maven)
-- [Create your first Azure function with Java and IntelliJ](https://docs.microsoft.com/en-us/azure/azure-functions/functions-create-maven-intellij)
-- [Announcing the general availability of Java support in Azure Functions](https://azure.microsoft.com/en-au/blog/announcing-the-general-availability-of-java-support-in-azure-functions/)
-[Azure Functions triggers and bindings concepts](https://docs.microsoft.com/en-us/azure/azure-functions/functions-triggers-bindings)
+- [Create your first function with Java and Maven](https://docs.microsoft.com/en-us/azure/azure-functions/functions-create-first-java-maven?WT.mc_id=github-blog-dglover)
+- [Create your first Azure function with Java and IntelliJ](https://docs.microsoft.com/en-us/azure/azure-functions/functions-create-maven-intellij?WT.mc_id=github-blog-dglover)
+- [Announcing the general availability of Java support in Azure Functions](https://azure.microsoft.com/en-au/blog/announcing-the-general-availability-of-java-support-in-azure-functions?WT.mc_id=github-blog-dglover)
+[Azure Functions triggers and bindings concepts](https://docs.microsoft.com/en-us/azure/azure-functions/functions-triggers-bindings?WT.mc_id=github-blog-dglover)
 - [Maven Plugin for Azure Functions](https://github.com/Microsoft/azure-maven-plugins/tree/develop/azure-functions-maven-plugin)
-- [Azure Functions Java developer guide](https://docs.microsoft.com/en-au/azure/azure-functions/functions-reference-java)
-- [ Java API for Azure Functions](https://docs.microsoft.com/en-us/java/api/com.microsoft.azure.functions.annotation?view=azure-java-stable)
+- [Azure Functions Java developer guide](https://docs.microsoft.com/en-au/azure/azure-functions/functions-reference-java?WT.mc_id=github-blog-dglover)
+- [ Java API for Azure Functions](https://docs.microsoft.com/en-us/java/api/com.microsoft.azure.functions.annotation?view=azure-java-stable?WT.mc_id=github-blog-dglover)
 
 ## Solution Components (included in this GitHub repo)
 
@@ -245,7 +245,7 @@ cp local.settings.sample.json local.settings.json
 
 ```
 
-### Step 9: Open the Kotlin Azure Functions Project with IntelliJ
+### Step 7: Open the Kotlin Azure Functions Project with IntelliJ
 
 From Terminal on Linux and macOS, or Powershell on Windows.
 
@@ -283,13 +283,13 @@ Start **IntelliJ** and open the project in the '**iot-serverless-kotlin-azure-fu
 }
 ```
 
-### Step 11: Deploy the Kotlin Azure Function
+### Step 8: Deploy the Kotlin Azure Function
 
 Open the '**Maven**' tab, run '**clean**', the '**package**', then '**azure-functions:deploy**'
 
 ![](./docs/resources/azure-function-deploy.jpg)
 
-### Step 12: Enable Static Websites for Azure Storage
+### Step 9: Enable Static Websites for Azure Storage
 
 The Dashboard project contains the Static Website project.
 
@@ -299,7 +299,7 @@ The page used for this sample is enviromon.html. Be sure to modify the "apiBaseU
 
 Copy the contents of the dashboard project to the static website.
 
-### Step 13: Enable CORS for the SignalR .NET Core Azure Function
+### Step 10: Enable CORS for the SignalR .NET Core Azure Function
 
 [az functionapp cors add](https://docs.microsoft.com/en-us/cli/azure/functionapp/cors?view=azure-cli-latest#az-functionapp-cors-add&WT.mc_id=github-blog-dglover)
 
@@ -307,7 +307,7 @@ Copy the contents of the dashboard project to the static website.
 az functionapp cors add -g enviromon-kotlin -n <Your SignalR Function Name> --allowed-origins <https://my-static-website-url>
 ```
 
-### Step 14: Start the Dashboard
+### Step 11: Start the Dashboard
 
 From your web browser, navigate to https://your-start-web-site/enviromon.html
 
