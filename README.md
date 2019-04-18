@@ -261,7 +261,7 @@ cp local.settings.sample.json local.settings.json
 
 Start **IntelliJ** and open the project in the '**iot-serverless-kotlin-azure-functions-signalr**' folder.
 
-### Step 10: Update the local.settings.json
+### Step 8: Update the local.settings.json
 
 ```json
 {
@@ -283,13 +283,13 @@ Start **IntelliJ** and open the project in the '**iot-serverless-kotlin-azure-fu
 }
 ```
 
-### Step 8: Deploy the Kotlin Azure Function
+### Step 9: Deploy the Kotlin Azure Function
 
 Open the '**Maven**' tab, run '**clean**', the '**package**', then '**azure-functions:deploy**'
 
 ![](./docs/resources/azure-function-deploy.jpg)
 
-### Step 9: Enable Static Websites for Azure Storage
+### Step 10: Enable Static Websites for Azure Storage
 
 The Dashboard project contains the Static Website project.
 
@@ -299,7 +299,7 @@ The page used for this sample is enviromon.html. Be sure to modify the "apiBaseU
 
 Copy the contents of the dashboard project to the static website.
 
-### Step 10: Enable CORS for the SignalR .NET Core Azure Function
+### Step 11: Enable CORS for the SignalR .NET Core Azure Function
 
 [az functionapp cors add](https://docs.microsoft.com/en-us/cli/azure/functionapp/cors?view=azure-cli-latest#az-functionapp-cors-add&WT.mc_id=github-blog-dglover)
 
@@ -307,7 +307,7 @@ Copy the contents of the dashboard project to the static website.
 az functionapp cors add -g enviromon-kotlin -n <Your SignalR Function Name> --allowed-origins <https://my-static-website-url>
 ```
 
-### Step 11: Start the Dashboard
+### Step 12: Start the Dashboard
 
 From your web browser, navigate to https://your-start-web-site/enviromon.html
 
