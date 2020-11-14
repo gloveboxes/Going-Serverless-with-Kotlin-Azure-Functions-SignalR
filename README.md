@@ -6,17 +6,17 @@ Follow me on [Twitter](https://twitter.com/dglover), [Project Source Code](https
 
 ![solution overview](https://raw.githubusercontent.com/gloveboxes/Going-Serverless-with-Kotlin-Azure-Functions-SignalR/master/docs/resources/solution-architecture.png)
 
-This solution diagram overviews a typical IoT solution. [Azure IoT Hub](https://docs.microsoft.com/en-us/azure/iot-hub?WT.mc_id=github-blog-dglover) is responsible for internet scale, secure, bi-directional communication with devices and backend services.
+This solution diagram overviews a typical IoT solution. [Azure IoT Hub](https://docs.microsoft.com/azure/iot-hub?WT.mc_id=iot-0000-dglover) is responsible for internet scale, secure, bi-directional communication with devices and backend services.
 
-Telemetry can be [routed](https://docs.microsoft.com/en-us/azure/iot-hub/tutorial-routing?WT.mc_id=github-blog-dglover) by Azure IoT Hub to various services and also to storage in [Apache Avro](https://avro.apache.org/docs/current/) or JSON format for purposes such as audit, integration or driving machine learning processes.
+Telemetry can be [routed](https://docs.microsoft.com/azure/iot-hub/tutorial-routing?WT.mc_id=iot-0000-dglover) by Azure IoT Hub to various services and also to storage in [Apache Avro](https://avro.apache.org/docs/current/) or JSON format for purposes such as audit, integration or driving machine learning processes.
 
 This posting takes a slice of this scenario and is about the straight through [serverless](https://en.wikipedia.org/wiki/Serverless_computing) processing of telemetry from Azure IoT Hub, via Kotlin Azure Functions and Azure SignalR for a near real-time dashboard.
 
 ### Azure Services
 
-The following Azure services are used in this solution and available in Free  tiers: [Azure IoT Hub](https://docs.microsoft.com/en-us/azure/iot-hub?WT.mc_id=github-blog-dglover), [Azure Functions](https://docs.microsoft.com/en-us/azure/azure-functions?WT.mc_id=github-blog-dglover), [Azure SignalR](https://docs.microsoft.com/en-us/azure/azure-signalr?WT.mc_id=github-blog-dglover), [Azure Storage](https://docs.microsoft.com/en-us/azure/storage?WT.mc_id=github-blog-dglover), [Azure Storage Static Websites](https://docs.microsoft.com/en-us/azure/storage/blobs/storage-blob-static-website?WT.mc_id=github-blog-dglover)
+The following Azure services are used in this solution and available in Free  tiers: [Azure IoT Hub](https://docs.microsoft.com/azure/iot-hub?WT.mc_id=iot-0000-dglover), [Azure Functions](https://docs.microsoft.com/azure/azure-functions?WT.mc_id=iot-0000-dglover), [Azure SignalR](https://docs.microsoft.com/azure/azure-signalr?WT.mc_id=iot-0000-dglover), [Azure Storage](https://docs.microsoft.com/azure/storage?WT.mc_id=iot-0000-dglover), [Azure Storage Static Websites](https://docs.microsoft.com/azure/storage/blobs/storage-blob-static-website?WT.mc_id=iot-0000-dglover)
 
-You can sign up for a [Free Azure Account](https://azure.microsoft.com/en-au/free?WT.mc_id=github-blog-dglover), if you are a student then be sure to sign up for [Azure for Students](https://azure.microsoft.com/en-au/free/students?WT.mc_id=github-blog-dglover), no credit card required.
+You can sign up for a [Free Azure Account](https://azure.microsoft.com/free?WT.mc_id=iot-0000-dglover), if you are a student then be sure to sign up for [Azure for Students](https://azure.microsoft.com/free/students?WT.mc_id=iot-0000-dglover), no credit card required.
 
 ## Developing Kotlin Azure Functions
 
@@ -24,13 +24,13 @@ The [Creating Kotlin based Azure Function with IntelliJ ](https://dev.to/azure/c
 
 ## Resources for Java and Kotlin Azure Functions
 
-- [Create your first function with Java and Maven](https://docs.microsoft.com/en-us/azure/azure-functions/functions-create-first-java-maven?WT.mc_id=github-blog-dglover)
-- [Create your first Azure function with Java and IntelliJ](https://docs.microsoft.com/en-us/azure/azure-functions/functions-create-maven-intellij?WT.mc_id=github-blog-dglover)
-- [Announcing the general availability of Java support in Azure Functions](https://azure.microsoft.com/en-au/blog/announcing-the-general-availability-of-java-support-in-azure-functions?WT.mc_id=github-blog-dglover)
-- [Azure Functions triggers and bindings concepts](https://docs.microsoft.com/en-us/azure/azure-functions/functions-triggers-bindings?WT.mc_id=github-blog-dglover)
+- [Create your first function with Java and Maven](https://docs.microsoft.com/azure/azure-functions/functions-create-first-java-maven?WT.mc_id=iot-0000-dglover)
+- [Create your first Azure function with Java and IntelliJ](https://docs.microsoft.com/azure/azure-functions/functions-create-maven-intellij?WT.mc_id=iot-0000-dglover)
+- [Announcing the general availability of Java support in Azure Functions](https://azure.microsoft.com/blog/announcing-the-general-availability-of-java-support-in-azure-functions?WT.mc_id=iot-0000-dglover)
+- [Azure Functions triggers and bindings concepts](https://docs.microsoft.com/azure/azure-functions/functions-triggers-bindings?WT.mc_id=iot-0000-dglover)
 - [Maven Plugin for Azure Functions](https://github.com/Microsoft/azure-maven-plugins/tree/develop/azure-functions-maven-plugin)
-- [Azure Functions Java developer guide](https://docs.microsoft.com/en-au/azure/azure-functions/functions-reference-java?WT.mc_id=github-blog-dglover)
-- [ Java API for Azure Functions](https://docs.microsoft.com/en-us/java/api/com.microsoft.azure.functions.annotation?view=azure-java-stable?WT.mc_id=github-blog-dglover)
+- [Azure Functions Java developer guide](https://docs.microsoft.com/azure/azure-functions/functions-reference-java?WT.mc_id=iot-0000-dglover)
+- [ Java API for Azure Functions](https://docs.microsoft.com/java/api/com.microsoft.azure.functions.annotation?view=azure-java-stable%3FWT.mc_id%3Dgithub-blog-dglover&WT.mc_id=iot-0000-dglover)
 
 ## Solution Components (included in this GitHub repo)
 
@@ -42,9 +42,9 @@ The [Creating Kotlin based Azure Function with IntelliJ ](https://dev.to/azure/c
 
 ### Optimistic Concurrency
 
-First up, it is useful to understand [Event Hub Trigger Scaling](https://docs.microsoft.com/en-us/azure/azure-functions/functions-bindings-event-iot#trigger---scaling?WT.mc_id=github-blog-dglover) and how additional function instances can be started to process events.
+First up, it is useful to understand [Event Hub Trigger Scaling](https://docs.microsoft.com/azure/azure-functions/functions-bindings-event-iot?WT.mc_id=iot-0000-dglover#trigger---scaling?WT.mc_id=github-blog-dglover) and how additional function instances can be started to process events.
 
-I wanted to maintain a count in the Device State table of the number of times a device had sent telemetry. The solution implements [Azure Storage/CosmosDB Optimistic Concurrency](https://azure.microsoft.com/en-us/blog/managing-concurrency-in-microsoft-azure-storage-2?WT.mc_id=github-blog-dglover).
+I wanted to maintain a count in the Device State table of the number of times a device had sent telemetry. The solution implements [Azure Storage/CosmosDB Optimistic Concurrency](https://azure.microsoft.com/blog/managing-concurrency-in-microsoft-azure-storage-2?WT.mc_id=iot-0000-dglover).
 
 [Optimistic Concurrency (OCC)](https://en.wikipedia.org/wiki/Optimistic_concurrency_control) assumes that multiple transactions can frequently complete without interfering with each other. While running, transactions use data resources without acquiring locks on those resources. Before committing, each transaction verifies that no other transaction has modified the data it has read. OCC is generally used in environments with low data contention.
 
@@ -199,13 +199,13 @@ This lab uses free of charge services on Azure. The following need to be set up:
 ### Step 1: Follow the Raspberry Pi Simulator Guide to set up Azure IoT Hub
 
 
-[Setting up the Raspberry Pi Simulator](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-raspberry-pi-web-simulator-get-started?WT.mc_id=github-blog-dglover)
+[Setting up the Raspberry Pi Simulator](https://docs.microsoft.com/azure/iot-hub/iot-hub-raspberry-pi-web-simulator-get-started?WT.mc_id=iot-0000-dglover)
 
-![raspberry Pi Simulator](https://docs.microsoft.com/en-us/azure/iot-hub/media/iot-hub-raspberry-pi-web-simulator/3_banner.png?WT.mc_id=github-blog-dglover)
+![raspberry Pi Simulator](https://docs.microsoft.com/azure/iot-hub/media/iot-hub-raspberry-pi-web-simulator/3_banner.png?WT.mc_id=iot-0000-dglover)
 
 ### Step 2: Create an Azure Resource Group
 
-[az group create](https://docs.microsoft.com/en-us/cli/azure/group?view=azure-cli-latest#az-group-create&WT.mc_id=github-blog-dglover)
+[az group create](https://docs.microsoft.com/cli/azure/group?view=azure-cli-latest&WT.mc_id=iot-0000-dglover#az-group-create&WT.mc_id=github-blog-dglover)
 
 ```bash
 az group create -l westus -n enviromon-kotlin
@@ -213,8 +213,8 @@ az group create -l westus -n enviromon-kotlin
 
 ### Step 3: Create a Azure Signal Service
 
-- [az signalr create](https://docs.microsoft.com/en-us/cli/azure/signalr?view=azure-cli-latest#az-signalr-create&WT.mc_id=github-blog-dglover) creates the Azure SignalR Service
-- [az signalr key list](https://docs.microsoft.com/en-us/cli/azure/ext/signalr/signalr/key?view=azure-cli-latest#ext-signalr-az-signalr-key-list&WT.mc_id=github-blog-dglover) returns the connection string you need for the SignalR .NET Core Azure Function.
+- [az signalr create](https://docs.microsoft.com/cli/azure/signalr?view=azure-cli-latest&WT.mc_id=iot-0000-dglover#az-signalr-create&WT.mc_id=github-blog-dglover) creates the Azure SignalR Service
+- [az signalr key list](https://docs.microsoft.com/cli/azure/ext/signalr/signalr/key?view=azure-cli-latest&WT.mc_id=iot-0000-dglover#ext-signalr-az-signalr-key-list&WT.mc_id=github-blog-dglover) returns the connection string you need for the SignalR .NET Core Azure Function.
 
 ```bash
 az signalr create -n <Your SignalR Name> -g enviromon-kotlin --sku Free_DS2 --unit-count 1
@@ -223,7 +223,7 @@ az signalr key list -n <Your SignalR Name> -g enviromon-kotlin
 
 ### Step 4: Create a Storage Account
 
-[az storage account create](https://docs.microsoft.com/en-us/cli/azure/storage/account?view=azure-cli-latest#az-storage-account-create&WT.mc_id=github-blog-dglover)
+[az storage account create](https://docs.microsoft.com/cli/azure/storage/account?view=azure-cli-latest&WT.mc_id=iot-0000-dglover#az-storage-account-create&WT.mc_id=github-blog-dglover)
 
 ```bash
 az storage account create -n enviromonstorage -g enviromon-kotlin -l westus --sku Standard_LRS --kind StorageV2
@@ -294,7 +294,7 @@ Open the '**Maven**' tab, run '**clean**', the '**package**', then '**azure-func
 
 The Dashboard project contains the Static Website project.
 
-Follow the guide for [Static website hosting in Azure Storage](https://docs.microsoft.com/en-us/azure/storage/blobs/storage-blob-static-website?WT.mc_id=github-blog-dglover).
+Follow the guide for [Static website hosting in Azure Storage](https://docs.microsoft.com/azure/storage/blobs/storage-blob-static-website?WT.mc_id=iot-0000-dglover).
 
 The page used for this sample is enviromon.html. Be sure to modify the "apiBaseUrl" url in the web page javascript to point your instance of the SignalR Azure Function.
 
@@ -302,7 +302,7 @@ Copy the contents of the dashboard project to the static website.
 
 ### Step 11: Enable CORS for the SignalR .NET Core Azure Function
 
-[az functionapp cors add](https://docs.microsoft.com/en-us/cli/azure/functionapp/cors?view=azure-cli-latest#az-functionapp-cors-add&WT.mc_id=github-blog-dglover)
+[az functionapp cors add](https://docs.microsoft.com/cli/azure/functionapp/cors?view=azure-cli-latest&WT.mc_id=iot-0000-dglover#az-functionapp-cors-add&WT.mc_id=github-blog-dglover)
 
 ```bash
 az functionapp cors add -g enviromon-kotlin -n <Your SignalR Function Name> --allowed-origins <https://my-static-website-url>
